@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+</head>
+<style>
+    body{
+        background-color:orange;
+    }
+    form {
+        max-width: 700px;
+        margin: 0 auto;
+        
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+      
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      
+</style>
+<body>
+    <form id="signup-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+      
+        <input type="submit" value="Sign Up">
+      </form>
+      
+</body>
+<script>
+    const form = document.getElementById('signup-form');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('confirm-password');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  if (passwordInput.value !== confirmPasswordInput.value) {
+    alert('Passwords do not match');
+    return;
+  }
+
+  // Code to send form data to server would go here
+  // For this example, we'll just log the form data to the console
+  console.log({
+    name: nameInput.value,
+    email: emailInput.value,
+    password: passwordInput.value
+  });
+
+  alert('Sign up successful!');
+});
+
+</script>
+</html>
